@@ -38,7 +38,7 @@ RUN $url = 'https://packages.erlang-solutions.com/erlang/esl-erlang/FLAVOUR_1_ge
 	\
 	Write-Host 'Complete.'
 
-ENV RABBITMQ_VERSION 3.7.10
+ENV RABBITMQ_VERSION 3.8.5
 
 # https://www.rabbitmq.com/install-windows-manual.html
 RUN $url = 'https://github.com/rabbitmq/rabbitmq-server/releases/download/v{0}/rabbitmq-server-windows-{0}.zip' -f $env:RABBITMQ_VERSION; \
