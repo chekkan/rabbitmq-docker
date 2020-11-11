@@ -63,6 +63,8 @@ RUN $url = 'https://github.com/rabbitmq/rabbitmq-server/releases/download/v{0}/r
 ENV RABBITMQ_LOGS=- RABBITMQ_SASL_LOGS=-
 
 # TODO RABBITMQ_DATA_DIR
+#copy a config file over
+COPY ["rabbitmq.conf", "C:/"]
 RUN rabbitmq-plugins enable rabbitmq_management
 
 EXPOSE 5672 15672
