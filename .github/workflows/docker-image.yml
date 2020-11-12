@@ -23,3 +23,4 @@ jobs:
         registry: docker.io
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
+        tag: 3.7.10
