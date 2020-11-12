@@ -7,8 +7,6 @@ RUN @powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((New-Object Sy
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 
 RUN choco install -y erlang --version=21.2
-#install rabbitmq
-# RUN choco install -y rabbitmq --version 3.7.17
 
 ENV ERLANG_HOME C:\\Program Files\\erl10.2
 ENV ERLANG_SERVICE_MANAGER_PATH C:\\Program Files\\erl10.2\\erts-10.2\\bin
@@ -40,10 +38,6 @@ RUN $url = 'https://github.com/rabbitmq/rabbitmq-server/releases/download/v{0}/r
 # TODO verification
 	\
 	Write-Host 'Complete.'
-
-# stop and remove windows service created by chocolatey
-# RUN rabbitmq-service.bat stop
-# RUN rabbitmq-service.bat remove
 
 RUN rabbitmq-plugins enable rabbitmq_management
 
